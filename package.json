@@ -1,0 +1,13 @@
+{
+  "name": "Sassy-Egghead",
+  "version": "0.0.1",
+  "description": "Learn the Best and Most Useful SCSS Egghead Course Repo",
+  "devDependencies": {
+    "node-sass": "^3.11.2"
+  },
+  "scripts": {
+    "start": "node-sass -o css scss"
+  },
+  "author": "Ari Picker",
+  "license": "UNLICENSED"
+}
