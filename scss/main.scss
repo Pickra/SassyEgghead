@@ -1,8 +1,1 @@
-@import "../css/other.css";
-
-.red { color: red; }
-.red-dark { color: darken(red, 20%); }
-
-@import "partial-b";
-@import "partial-a";
-@import "partial-c";
+@import "nesting/nesting";
