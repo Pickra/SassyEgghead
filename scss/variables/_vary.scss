@@ -1,0 +1,19 @@
+$captain-marvel: green;
+$wom: women-of-the-marvel-universe;
+
+.#{$wom} { content: "#{$wom}"; }
+
+.#{$wom}-text { color: $color-text-muted; }
+.#{$wom}-cape { background-color: $color-primary; }
+img { border: 1px dotted $captain-marvel; }
+
+.elektra {
+  $elektra: purple;
+  $captain-marvel: blue;
+
+  color: $captain-marvel;
+  border: 1px solid $elektra;
+  font-size: $font-size-h1;
+}
+
+.fancy { color: $captain-marvel; }
