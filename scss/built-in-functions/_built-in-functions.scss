@@ -1,0 +1,37 @@
+$base-color: #a83b24;
+$light-color: lighten($base-color, 20%);
+$dark-color: darken($base-color, 35%);
+
+.old-light-dark {
+  background-image: linear-gradient($light-color, $base-color, $dark-color);
+}
+
+$light-color: scale_color($base-color, $alpha: -50%);
+$dark-color: scale_color($base-color, $saturation: -35%);
+
+$cbc: complement($base-color);
+$clc: complement($light-color);
+$cdc: complement($dark-color);
+
+.wolverine {
+  text-align: center;
+  background-image: linear-gradient($light-color, $base-color, $dark-color);
+
+  &:hover {
+    background-image: linear-gradient($clc, $cbc, $cdc);
+    .wolverine-text {
+      color: transparentize(mix($base-color, yellow, 25%), .2);
+    }
+  }
+
+  &-text {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    color: mix($base-color, yellow, 75%);
+  }
+
+  img {
+    margin-top: 3rem;
+    border-radius: 50%;
+  }
+}
