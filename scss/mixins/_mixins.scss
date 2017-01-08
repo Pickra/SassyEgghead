@@ -1,0 +1,64 @@
+.character {
+  text-align: center;
+  width: 15rem;
+  display: inline-block;
+  margin: 0.5rem;
+
+  p {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  img {
+    margin-top: 1rem;
+    border-radius: 25%;
+  }
+}
+
+@mixin make-transitions($transitions...) { transition: $transitions; }
+
+@mixin make-character($base-color: #a83b24, $mix-color: #fffaa6, $border: null) {
+  $light-color: lighten($base-color, 20%);
+  $dark-color: darken($base-color, 35%);
+  $cbc: complement($base-color);
+  $clc: complement($light-color);
+  $cdc: complement($dark-color);
+
+  background-image: linear-gradient($light-color, $base-color, $dark-color);
+  border: $border;
+
+  &:hover { background-image: linear-gradient($clc, $cbc, $cdc); }
+  &:hover &-text { color: transparentize(mix($base-color, $mix-color, 25%), .2); }
+
+  &-text {
+    color: mix($base-color, $mix-color, 75%);
+  }
+
+  img { @content; }
+}
+
+@mixin media($min-width) {
+  @media screen and (min-width: $min-width) { @content; }
+}
+
+.wolverine {
+  @include make-character($border: 5px solid brown, $mix-color: pink) {
+    @include make-transitions(margin 1s, border-radius 1s, border 1s, transform 1s);
+
+    &:hover {
+      margin-top: 5rem;
+      border-radius: 50%;
+      border: 10px solid green;
+      transform: rotate3d(10, 0, 0, 360deg);
+    }
+  };
+}
+
+.rogue { @include make-character(#0ab36d, #FFFE8A, 5px solid green); }
+.firestar { @include make-character(#DB233B, #e3fd00); }
+
+.nightcrawler {
+  @include make-character(#1d6098, #ffcef9) {
+    @include media(800px) { content: url("../images/bamf.jpg"); }
+  };
+}
