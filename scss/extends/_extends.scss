@@ -1,0 +1,37 @@
+%hero .stuff { background: linear-gradient(red, white, blue); }
+%villain { background: darkred; }
+
+@mixin character($type: hero) {
+  height: 20px;
+  width: 20px;
+
+  @extend %#{$type};
+
+  @content;
+}
+
+.doc-ock {
+  @include character(villain){
+    border: 1px solid green;
+  };
+}
+.cheetah { @include character(villain); }
+.enchantress { @include character(villain); }
+
+.captain-america { @include character; }
+.medusa { @include character(hero); }
+.she-hulk { @include character(hero); }
+
+@mixin make-transitions($transitions...) {
+  transition: $transitions;
+}
+
+@media screen and (min-width: 800px) {
+  %buddy { color: purple; }
+}
+
+@media screen and (min-width: 800px) {
+  .buddy {
+    @extend %buddy;
+  }
+}
