@@ -1,0 +1,30 @@
+  @for $i from 1 through 10 {
+    .col-#{$i} {
+      width: 100% / $i;
+    }
+  }
+/////////////////////////////////////
+
+  @for $i from 1 through 10 {
+    $value: 0.5 * $i;
+
+    [class~="mt-#{$value}"] {
+      margin-top: #{$value}rem;
+    }
+  }
+
+/////////////////////////////////////
+
+@mixin light-color-class($color, $color-name, $i) {
+  $color-value: if($i == 1, $color, lighten($color, 3% * $i));
+
+  .#{$color-name}#{$i} {
+    color: $color-value;
+  }
+}
+
+@for $i from 1 through 10 {
+  @include light-color-class(#BA0000, passion, $i);
+  @include light-color-class(rebeccapurple, empathy, $i);
+  @include light-color-class(blue, cool-kid, $i);
+}
