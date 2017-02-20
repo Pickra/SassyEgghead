@@ -1,0 +1,38 @@
+.container {
+  border: 2px solid red;
+  margin: 0.5rem auto;
+  font-size: 2rem;
+  transition: background-color 1s, width 1s;
+}
+
+.logo {
+  height: 250px;
+  width: 250px;
+  margin: 0.5rem auto;
+}
+
+$superheroes: wonder-woman, spiderman, batman, superman;
+@each $hero in $superheroes {
+  .#{$hero}-logo {
+    background-image: url("../images/#{$hero}-logo.gif");
+  }
+}
+
+$breakpoints: (sm: 375px, md: 768px, lg: 1200px);
+$container-widths: (sm: 250px, md: 500px, lg: 750px);
+@each $size, $bp in $breakpoints {
+  @media only screen and (min-width: $bp) {
+    .container-width { width: map-get($container-widths, $size); }
+  }
+}
+
+$hero-media:  (1 375px 768px crimson),
+              (2 768px 1000px darkred),
+              (3 1200px 1400px grey),
+              (4 768px 1200px blue);
+
+@each $i, $bp-start, $bp-end, $color in $hero-media {
+  @media only screen and (min-width: $bp-start) and (max-width: $bp-end) {
+    .#{nth($superheroes, $i)} { background-color: $color; }
+  }
+}
