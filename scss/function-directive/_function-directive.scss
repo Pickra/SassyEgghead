@@ -1,0 +1,18 @@
+@function font-scale($exponent, $base-font-size: 14px, $ratio: 1.2) {
+    $value: 1;
+
+    @for $i from 1 through $exponent {
+        $value: $value * $ratio;
+    }
+
+    @return if($exponent > 0, $base-font-size * $value, $base-font-size);
+}
+
+.stuff { font-size: font-scale(4); }
+.things { font-size: font-scale(2); }
+
+@for $i from 1 through 6 {
+    $exponent: 7 - $i;
+
+    h#{$i} { font-size: font-scale($exponent, $ratio: 1.5); }
+}
