@@ -3,7 +3,7 @@
 Have you ever wished for iteration when writing styles? How cool would it be to use functions to write styles?
 SCSS has that and more! SCSS is a superset of CSS. Any valid CSS is SCSS, they even have the same syntax.
 SCSS borrows features from other languages to write smarter, reusable and more readable styles.
-[This FREE course](https://egghead.io/) will focus on how to use SCSS’s more useful features,
+[THIS FREE course](https://egghead.io/) will focus on how to use SCSS’s more useful features,
 compare them against each other and assess when their usage is appropriate.
 
 ## Lesson Titles:
