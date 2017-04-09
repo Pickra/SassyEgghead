@@ -3,7 +3,7 @@
 Have you ever wished for iteration when writing styles? How cool would it be to use functions to write styles?
 SCSS has that and more! SCSS is a superset of CSS. Any valid CSS is SCSS, they even have the same syntax.
 SCSS borrows features from other languages to write smarter, reusable and more readable styles.
-[This course](https://egghead.io/) will focus on how to use SCSS’s more useful features,
+[This FREE course](https://egghead.io/) will focus on how to use SCSS’s more useful features,
 compare them against each other and assess when their usage is appropriate.
 
 ## Lesson Titles:
@@ -27,7 +27,7 @@ so 1 value change will update that value in all the right places.
 We can use javascript for color and opacity variations, math, list and map logic or to see if something exists.
 SCSS includes functions for a wide range of common use cases for logic in our styles.
 In this lesson we look at some of the more useful color functions to improve development velocity, readability, and simplify the code.
-Be sure to checkout all the [SCSS functions](http://sass-lang.com/documentation/Sass/Script/Functions.html)
+Be sure to checkout all the [SCSS functions](http://sass-lang.com/documentation/Sass/Script/Functions.html).
 
 [Reusing Styles with the SCSS @mixin Directive:](https://github.com/Pickra/SassyEgghead/commits/feature/mixins)
 Copy/pasting the same code is redundant at best. Plus, updating copy/pasted code slows development velocity.
