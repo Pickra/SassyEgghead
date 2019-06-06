@@ -1,9 +1,9 @@
 {
   "name": "Sassy-Egghead",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Learn the Best and Most Useful SCSS Egghead Course Repo",
   "devDependencies": {
-    "node-sass": "^3.11.2"
+    "node-sass": "^4.12.0"
   },
   "scripts": {
     "start": "node-sass -o css scss --output-style expanded"
